@@ -12,3 +12,21 @@ body {
     line-height: vw(21);
   }
 }
+
+.container {
+  width: 100%;
+  margin: 0 100px;
+
+  @include desktop {
+    margin: 0 vw(100);
+  }
+}
+
+.container-wide {
+  width: 100%;
+  margin: 0 50px;
+
+  @include desktop {
+    margin: 0 vw(50);
+  }
+}

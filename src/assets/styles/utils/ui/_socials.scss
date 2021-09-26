@@ -1,0 +1,66 @@
+.socials {
+  display: flex;
+  align-items: center;
+
+  &-item {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $white;
+    transition: $transition;
+
+    @include desktop {
+      width: vw(40);
+      height: vw(40);
+    }
+
+    @include hover {
+      path {
+        fill: $white;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 15px;
+
+      @include desktop {
+        margin-right: vw(15);
+      }
+    }
+
+    &__instagram {
+      @include hover {
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+      }
+    }
+
+    &__whatsapp {
+      @include hover {
+        background-color: #43d854;
+      }
+    }
+
+    &__facebook {
+      @include hover {
+        background-color: #3b5998;
+      }
+    }
+  }
+
+  &-icon {
+    width: 100%;
+    height: 100%;
+
+    path {
+      fill: $black;
+      transition: $transition;
+    }
+  }
+}

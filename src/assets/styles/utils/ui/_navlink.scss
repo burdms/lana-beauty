@@ -1,0 +1,7 @@
+.navlink {
+  transition: $transition;
+
+  @include hover {
+    color: $red;
+  }
+}
