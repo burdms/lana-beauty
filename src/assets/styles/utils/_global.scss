@@ -1,0 +1,14 @@
+body {
+  font-family: $primaryFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: $black;
+  background-color: $white;
+
+  @include desktop {
+    font-size: vw(18);
+    line-height: vw(21);
+  }
+}

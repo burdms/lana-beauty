@@ -26,9 +26,18 @@
   }
 }
 
+@mixin desktop {
+  @media only screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
 @mixin hover {
   @media only screen and (min-width: 1024px) {
-    @content;
+    &:hover {
+      @content;
+      transition: $transition;
+    }
   }
 }
 

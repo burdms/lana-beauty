@@ -1,0 +1,3 @@
+mixin quote(quote)
+  blockquote(cite= quote.cite ? quote.cite : '', class= quote.class ? quote.class : '').quote
+    p !{quote.text}

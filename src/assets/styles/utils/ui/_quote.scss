@@ -1,0 +1,11 @@
+.quote {
+  font-family: $secondaryFont;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 48px;
+
+  @include desktop {
+    font-size: vw(36);
+    line-height: vw(48);
+  }
+}

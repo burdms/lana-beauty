@@ -1,0 +1,67 @@
+.link {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  line-height: 28px;
+
+  @include desktop {
+    font-size: vw(24);
+    line-height: vw(28);
+  }
+
+  @include hover {
+    span {
+      &::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+
+    svg {
+      transform: translateX(8px);
+
+      @include desktop {
+        transform: translateX(vw(8));
+      }
+    }
+  }
+
+  span {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      background-color: $black;
+      opacity: 0;
+      transition: $transition;
+
+      @include desktop {
+        width: vw(1);
+        height: vw(1);
+      }
+    }
+  }
+
+  svg {
+    position: relative;
+    margin-left: 8px;
+    width: 7px;
+    height: 12px;
+    transition: $transition;
+
+    @include desktop {
+      margin-left: vw(8);
+      width: vw(7);
+      height: vw(12);
+    }
+
+    path {
+      fill: $black;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.banner {
+  &-title {
+    font-family: $secondaryFont;
+    font-size: 72px;
+    line-height: 96px;
+
+    @include desktop {
+      font-size: vw(72);
+      line-height: vw(96);
+    }
+  }
+
+  &-text {
+    font-size: 36px;
+    line-height: 42px;
+
+    @include desktop {
+      font-size: vw(36);
+      line-height: vw(42);
+    }
+  }
+}
