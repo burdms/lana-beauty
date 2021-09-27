@@ -45,3 +45,6 @@ body {
   border-radius: 0px;
   box-shadow: inset 7px 10px 12px $greyLight;
 }
+::selection {
+  background: $greyLight;
+}
