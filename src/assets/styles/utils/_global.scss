@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-  width: 100%;
   margin: 0 100px;
 
   @include desktop {
@@ -23,10 +22,26 @@ body {
 }
 
 .container-wide {
-  width: 100%;
   margin: 0 50px;
 
   @include desktop {
     margin: 0 vw(50);
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: $red;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $red;
+}
+::-webkit-scrollbar-track {
+  background: $greyLight;
+  border-radius: 0px;
+  box-shadow: inset 7px 10px 12px $greyLight;
 }
