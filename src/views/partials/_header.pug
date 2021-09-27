@@ -1,1 +1,36 @@
 header.header
+  .container-wide
+    .header-wrapper
+      a(href="/").header-logo
+        img(src=require("../../assets/images/header-logo.svg"), alt="Lana Beauty — estetica & makeup permanente").header-logo__item
+      
+      .header-burger.active
+        span.header-burger__line
+
+      .header-menu.active
+        .header-menu__wrapper
+          a(href="/").header-menu__logo
+            img(src=require("../../assets/images/logo.png"), alt="Lana Beauty — estetica & makeup permanente").header-menu__logo-item
+          
+          nav.header-menu__nav
+            ul.header-menu__list
+              each item in [ { text: 'Servizi' }, { text: 'Portfolio' }, { text: 'Shop' },  { text: 'Contatti' },]
+                li.header-menu__list-item
+                  a(href= item.link ? item.link : '#').link.navlink.header-menu__link= item.text
+
+            ul.langs.header-menu__langs
+              li.langs-item
+                a(href="#" data-lang="ru").link.navlink.langs-item__link
+                  | Ru
+
+              li.langs-item
+                a(href="#" data-lang="en").link.navlink.langs-item__link
+                  | En
+          
+          .header-menu__contacts
+            a(href="tel:+39011999999").link.navlink.header-menu__link 
+                | 011 999999
+
+          .header-menu__socials
+            +socials
+            

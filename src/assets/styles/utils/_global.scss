@@ -29,6 +29,14 @@ body {
   }
 }
 
+.first-section {
+  margin-top: 175px;
+
+  @include desktop {
+    margin-top: vw(175);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
