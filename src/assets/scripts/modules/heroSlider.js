@@ -6,8 +6,15 @@ export default function heroSlider() {
     const heroSlider = new Swiper('.hero-slider', {
       effect: 'fade',
       loop: true,
+      speed: 400,
+
       autoplay: {
         delay: 5000,
+      },
+
+      pagination: {
+        el: '.hero-slider__pagination',
+        clickable: true,
       },
     });
   }

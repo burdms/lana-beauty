@@ -108,4 +108,18 @@ $elemMargin: 70px;
       margin-bottom: 35px;
     }
   }
+
+  &-slider {
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      border: 2px solid $red;
+      opacity: 1;
+
+      &-active {
+        background-color: $red;
+      }
+    }
+  }
 }
