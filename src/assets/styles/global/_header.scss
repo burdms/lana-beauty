@@ -10,6 +10,10 @@
     padding: vw(30) 0;
   }
 
+  @include media("m") {
+    padding: 20px 0;
+  }
+
   &.menu-active {
     .header {
       &-overlay {
@@ -64,12 +68,18 @@
 
   &-logo {
     width: 450px;
-    height: 115px;
     overflow: hidden;
 
     @include desktop {
       width: vw(450);
-      height: vw(115);
+    }
+
+    @include media("m") {
+      width: 250px;
+    }
+
+    @include media("xs") {
+      width: 175px;
     }
 
     &__item {
@@ -100,24 +110,6 @@
         transform: translateX(-100%);
       }
     }
-
-    // &.active {
-    //   &::before,
-    //   &::after {
-    //     opacity: 0;
-    //     transform: scale(0);
-    //   }
-
-    //   .header-burger__line {
-    //     &::before {
-    //       transform: rotate(45deg);
-    //     }
-
-    //     &::after {
-    //       transform: rotate(-45deg);
-    //     }
-    //   }
-    // }
 
     &::before,
     &::after {

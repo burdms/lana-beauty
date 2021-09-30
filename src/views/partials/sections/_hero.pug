@@ -3,11 +3,13 @@ mixin heroSection(content)
     .swiper.banner.hero-slider
       .swiper-wrapper
         each item, index in content.slides
-          .swiper-slide.hero-wrapper.hero-slider__slide
+          .swiper-slide.hero__wrapper
             if (item.background)
-              img(src=require(`../../assets/images/${item.background.src}`), alt= item.background.alt ? item.background.alt : '').hero__image
+              .hero__background
+                .hero__background-overlay
+                img(src=require(`../../assets/images/${item.background.src}`), alt= item.background.alt ? item.background.alt : '').hero__background-image
 
-            .container
+            .container.hero__container
               - const tag = (index === 0) ? 'h1' : 'h2'
               #{tag}.banner-title.hero__title= item.title
 

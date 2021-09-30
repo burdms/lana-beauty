@@ -10,6 +10,11 @@
     line-height: vw(48);
   }
 
+  @include media("l") {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
   span {
     &:first-child {
       font-weight: 700;

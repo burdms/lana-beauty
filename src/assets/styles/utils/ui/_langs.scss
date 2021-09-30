@@ -24,6 +24,11 @@
           font-size: vw(24);
           line-height: vw(28);
         }
+
+        @include media("l") {
+          font-size: 20px;
+          line-height: 24px;
+        }
       }
     }
   }

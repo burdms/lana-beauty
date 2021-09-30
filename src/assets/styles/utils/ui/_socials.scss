@@ -9,15 +9,20 @@
     background-color: $white;
     transition: $transition;
 
+    @include hover {
+      path {
+        fill: $white;
+      }
+    }
+
     @include desktop {
       width: vw(40);
       height: vw(40);
     }
 
-    @include hover {
-      path {
-        fill: $white;
-      }
+    @include media("s") {
+      width: 30px;
+      height: 30px;
     }
 
     &:not(:last-child) {
@@ -25,6 +30,10 @@
 
       @include desktop {
         margin-right: vw(15);
+      }
+
+      @include media("s") {
+        margin-right: 10px;
       }
     }
 

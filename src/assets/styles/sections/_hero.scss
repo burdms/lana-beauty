@@ -1,0 +1,91 @@
+$elemMargin: 70px;
+
+.hero {
+  &__wrapper {
+    padding: 274px 0 111px;
+    background-color: $grey;
+
+    @include desktop {
+      padding: vw(274) 0 vw(111);
+    }
+
+    @include media("m") {
+      padding: 200px 0 75px;
+    }
+
+    @include media("xs") {
+      padding-top: 150px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+
+    &-overlay {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $grey;
+      opacity: 0.3;
+
+      @include media("xs") {
+        display: block;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: $elemMargin;
+    max-width: 535px;
+
+    @include desktop {
+      margin-bottom: vwpx($elemMargin);
+      max-width: vw(535);
+    }
+
+    @include media("m") {
+      margin-bottom: 55px;
+      max-width: 50%;
+    }
+
+    @include media("xs") {
+      margin-bottom: 35px;
+      max-width: none;
+    }
+  }
+
+  &__link {
+    margin-bottom: $elemMargin;
+
+    @include desktop {
+      margin-bottom: vwpx($elemMargin);
+    }
+
+    @include media("m") {
+      margin-bottom: 55px;
+    }
+
+    @include media("xs") {
+      margin-bottom: 35px;
+    }
+  }
+}
