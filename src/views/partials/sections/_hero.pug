@@ -3,7 +3,7 @@ mixin heroSection(content)
     .swiper.banner.hero-slider
       .swiper-wrapper
         each item, index in content.slides
-          .swiper-slide.hero__wrapper
+          .swiper-slide.hero__wrapper(class= item.light ? 'hero__wrapper-light' : '')
             if (item.background)
               .hero__background
                 .hero__background-overlay

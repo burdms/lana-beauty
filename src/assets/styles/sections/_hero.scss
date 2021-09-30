@@ -16,6 +16,26 @@ $elemMargin: 70px;
     @include media("xs") {
       padding-top: 150px;
     }
+
+    &-light {
+      .hero__title,
+      .hero__text,
+      .hero__link {
+        color: $white;
+
+        span {
+          &::after {
+            background-color: $white;
+          }
+        }
+
+        svg {
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
   }
 
   &__background {
