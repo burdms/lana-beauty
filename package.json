@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/burdms/lana-beauty#readme",
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "autoprefixer": "^10.3.1",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "autoprefixer": "^10.3.6",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
@@ -38,16 +38,19 @@
     "postcss-loader": "^6.1.1",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",
-    "sass": "^1.37.5",
+    "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^2.0.0",
-    "webpack": "^5.50.0",
-    "webpack-cli": "^4.7.2",
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
   },
   "browserslist": [
     "> 1%",
     "last 3 version"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^7.0.7"
+  }
 }
