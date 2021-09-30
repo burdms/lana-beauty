@@ -1,16 +1,32 @@
 extends ../layouts/default
 
+include ../partials/sections/_hero
+
 block vars
   -
     const page = {
       title: 'Lana Beauty — estetica & makeup permanente',
       class: 'index',
+      content: {
+        hero: {
+          slides: [
+            { 
+              title: 'Crea il tuo look indimenticabile',
+              link: { text: 'Prenota l’appuntamento' },
+              socials: true,
+              background: { src: 'hero-main.jpg', alt: 'Alt text' },
+            },
+          ],
+        },
+      },
     };
 
 block main
-  .container
-    +sectionTitle('test ', 'title')
-    +link({text: 'Linktext'})
-    +quote({text: 'A very very long quote text.<br>With tags etc.'})
-    a(href="#").navlink LINK
-    +socials 
+  +heroSection(page.content.hero)
+
+  //- .container
+  //-   +sectionTitle('test ', 'title')
+  //-   +link({text: 'Linktext'})
+  //-   +quote({text: 'A very very long quote text.<br>With tags etc.'})
+  //-   a(href="#").navlink LINK
+  //-   +socials 

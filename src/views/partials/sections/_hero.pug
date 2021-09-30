@@ -1,0 +1,20 @@
+mixin heroSection(content)
+  section.hero.section(class= content.firstSection ? 'first-section' : '')
+    .swiper.banner.hero-slider
+      .swiper-wrapper
+        each item, index in content.slides
+          .swiper-slide.hero-wrapper.hero-slider__slide
+            if (item.background)
+              img(src=require(`../../assets/images/${item.background.src}`), alt= item.background.alt ? item.background.alt : '').hero__image
+
+            .container
+              - const tag = (index === 0) ? 'h1' : 'h2'
+              #{tag}.banner-title.hero__title= item.title
+
+              if (item.link)
+                .hero__link
+                  +link(item.link)
+
+              if (item.socials)
+                .hero__socials
+                  +socials
