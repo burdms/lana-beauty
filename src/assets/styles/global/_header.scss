@@ -10,6 +10,52 @@
     padding: vw(30) 0;
   }
 
+  &.menu-active {
+    .header {
+      &-overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &-burger {
+        &::before,
+        &::after {
+          opacity: 0;
+          transform: scale(0);
+        }
+
+        &__line {
+          &::before {
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      &-menu {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: transparent;
+    pointer-events: none;
+  }
+
   &-wrapper {
     display: flex;
     align-items: center;
@@ -35,7 +81,7 @@
 
   &-burger {
     position: relative;
-    z-index: 92;
+    z-index: 93;
     width: 30px;
     height: 19px;
     cursor: pointer;
@@ -55,23 +101,23 @@
       }
     }
 
-    &.active {
-      &::before,
-      &::after {
-        opacity: 0;
-        transform: scale(0);
-      }
+    // &.active {
+    //   &::before,
+    //   &::after {
+    //     opacity: 0;
+    //     transform: scale(0);
+    //   }
 
-      .header-burger__line {
-        &::before {
-          transform: rotate(45deg);
-        }
+    //   .header-burger__line {
+    //     &::before {
+    //       transform: rotate(45deg);
+    //     }
 
-        &::after {
-          transform: rotate(-45deg);
-        }
-      }
-    }
+    //     &::after {
+    //       transform: rotate(-45deg);
+    //     }
+    //   }
+    // }
 
     &::before,
     &::after {
@@ -82,6 +128,7 @@
       border-radius: 10px;
       background-color: $black;
       transition: $transition;
+      pointer-events: none;
 
       @include desktop {
         height: vw(3);
@@ -107,6 +154,7 @@
       transform: translateY(-50%);
       width: 100%;
       height: 3px;
+      pointer-events: none;
 
       @include desktop {
         height: vw(3);

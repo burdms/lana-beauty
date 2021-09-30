@@ -2,12 +2,14 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 92;
   padding: 0 145px 90px;
   height: 100vh;
   background-color: $greyLight;
   opacity: 0;
   overflow-y: auto;
   transition: $transition;
+  pointer-events: none;
 
   &.active {
     opacity: 1;

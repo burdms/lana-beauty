@@ -4,10 +4,12 @@ header.header
       a(href="/").header-logo
         img(src=require("../../assets/images/header-logo.svg"), alt="Lana Beauty — estetica & makeup permanente").header-logo__item
       
-      .header-burger.active
+      .header-burger
         span.header-burger__line
 
-      .header-menu.active
+      .header-overlay
+
+      .header-menu
         .header-menu__wrapper
           a(href="/").header-menu__logo
             img(src=require("../../assets/images/logo.png"), alt="Lana Beauty — estetica & makeup permanente").header-menu__logo-item
@@ -19,12 +21,12 @@ header.header
                   a(href= item.link ? item.link : '#').link.navlink.header-menu__link= item.text
 
             ul.langs.header-menu__langs
-              li.langs-item
-                a(href="#" data-lang="ru").link.navlink.langs-item__link
+              li.langs__item
+                a(href="#" data-lang="ru").link.navlink.langs__item-link
                   | Ru
 
-              li.langs-item
-                a(href="#" data-lang="en").link.navlink.langs-item__link
+              li.langs__item
+                a(href="#" data-lang="en").link.navlink.langs__item-link
                   | En
           
           .header-menu__contacts
