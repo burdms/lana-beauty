@@ -46,6 +46,15 @@
     }
   }
 
+  &.shrink-logo {
+    .header-logo {
+      @include media("m", false) {
+        width: 200px;
+        transition: $transition;
+      }
+    }
+  }
+
   &-overlay {
     position: fixed;
     top: 0;
@@ -69,6 +78,7 @@
   &-logo {
     width: 450px;
     overflow: hidden;
+    transition: $transition;
 
     @include desktop {
       width: vw(450);
