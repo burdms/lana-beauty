@@ -29,6 +29,18 @@ body {
   }
 }
 
+.section {
+  padding: 150px 0;
+
+  @include desktop {
+    padding: vw(150) 0;
+  }
+
+  @include media("m") {
+    padding: 75px 0;
+  }
+}
+
 .no-scroll {
   overflow-y: hidden;
 }
