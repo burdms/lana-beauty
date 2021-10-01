@@ -121,15 +121,29 @@ $elemMargin: 70px;
   }
 
   &-slider {
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background-color: transparent;
-      border: 2px solid $red;
-      opacity: 1;
+    .swiper-pagination {
+      bottom: 40px;
 
-      &-active {
-        background-color: $red;
+      @include desktop {
+        bottom: vw(40);
+      }
+
+      &-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 2px solid $red;
+        opacity: 1;
+
+        @include desktop {
+          width: vw(10);
+          height: vw(10);
+          border-width: vw(2);
+        }
+
+        &-active {
+          background-color: $red;
+        }
       }
     }
   }
