@@ -76,10 +76,16 @@ $elemMargin: 70px;
   &__title {
     margin-bottom: $elemMargin;
     max-width: 535px;
+    min-height: 192px;
 
     @include desktop {
       margin-bottom: vwpx($elemMargin);
       max-width: vw(535);
+      min-height: vw(192);
+    }
+
+    @include media("l") {
+      min-height: 128px;
     }
 
     @include media("m") {
@@ -87,9 +93,14 @@ $elemMargin: 70px;
       max-width: 50%;
     }
 
+    @include media("s") {
+      min-height: 84px;
+    }
+
     @include media("xs") {
       margin-bottom: 35px;
       max-width: none;
+      min-height: 64px;
     }
   }
 
