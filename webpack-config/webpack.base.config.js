@@ -135,7 +135,9 @@ module.exports = {
         test: /\.(?:gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: `${PATHS.assets}/images/[hash][ext][query]`,
+          filename: isDev ?
+            `${PATHS.assets}/images/[name][ext]` :
+            `${PATHS.assets}/images/[hash][ext][query]`,
         },
       },
       {
