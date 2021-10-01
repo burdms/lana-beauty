@@ -1,0 +1,5 @@
+mixin quoteblock(content)
+  section.quoteblock.section(class= content.firstSection ? 'first-section' : '')
+    .container
+      .quoteblock__wrapper
+        +quote(content)

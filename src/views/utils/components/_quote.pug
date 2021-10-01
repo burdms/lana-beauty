@@ -1,3 +1,4 @@
 mixin quote(quote)
   blockquote(cite= quote.cite ? quote.cite : '', class= quote.class ? quote.class : '').quote
-    p !{quote.text}
+    p.quote__text !{quote.text}
+    figcaption.quote__figcaption= quote.figcaption

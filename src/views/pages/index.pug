@@ -1,6 +1,7 @@
 extends ../layouts/default
 
 include ../partials/sections/_hero
+include ../partials/sections/_quoteblock
 
 block vars
   -
@@ -25,11 +26,16 @@ block vars
             },
           ],
         },
+        quote: {
+          text: `You won't get a&nbsp;second chance to make a&nbsp;first impression`,
+          figcaption: '— Coco Chanel',
+        },
       },
     };
 
 block main
   +heroSection(page.content.hero)
+  +quoteblock(page.content.quote)
 
   //- .container
   //-   +sectionTitle('test ', 'title')
