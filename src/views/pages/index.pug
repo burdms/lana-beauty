@@ -2,6 +2,7 @@ extends ../layouts/default
 
 include ../partials/sections/_hero
 include ../partials/sections/_quoteblock
+include ../partials/sections/_info
 
 block vars
   -
@@ -30,12 +31,38 @@ block vars
           text: `You won't get a&nbsp;second chance to make a&nbsp;first impression`,
           figcaption: '— Coco Chanel',
         },
+        info: {
+          items: [
+            {
+              title: { word1: 'Make', word2: '-Up', subtitle: 'MAKEUP<br>PEELING LIFTING<br>INIEZIONI' },
+              image: { src: 'makeup.jpg', alt: '' },
+              description: [
+                {
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                  link: { href: '/servizi.html#makeup', text: 'Più informazioni' },
+                },
+              ],
+            },
+            {
+              flipped: true,
+              title: { word1: 'Manicure', subtitle: 'MANI, PEDI<br>EDIFICIO ACRILICO<br>ESTENSIONE GEL' },
+              image: { src: 'manicure.jpg', alt: '' },
+              description: [
+                {
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                  link: { href: '/servizi.html#manicure', text: 'Più informazioni' },
+                },
+              ],
+            },
+          ],
+        },
       },
     };
 
 block main
   +heroSection(page.content.hero)
   +quoteblock(page.content.quote)
+  +info(page.content.info)
 
   //- .container
   //-   +sectionTitle('test ', 'title')

@@ -20,13 +20,11 @@
     line-height: 28px;
   }
 
-  span {
-    &:first-child {
-      font-weight: 700;
-    }
+  &-first {
+    font-weight: 700;
+  }
 
-    &:last-child {
-      color: $greyDark;
-    }
+  &-last {
+    color: $greyDark;
   }
 }

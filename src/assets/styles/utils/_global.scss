@@ -11,6 +11,11 @@ body {
     font-size: vw(18);
     line-height: vw(21);
   }
+
+  @include media("l") {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 
 .container {

@@ -1,0 +1,12 @@
+.subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: lowercase;
+
+  @include desktop {
+    font-size: vw(14);
+    line-height: vw(16);
+  }
+}

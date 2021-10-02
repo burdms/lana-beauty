@@ -1,0 +1,32 @@
+mixin info(content)
+  section.info(class= content.firstSection ? 'first-section' : '')
+    .container
+      .info-wrapper
+        each item in content.items
+          .info-item(class= item.flipped ? 'info-item--flipped' : '')
+            .info-image.info-item__image
+              .info-image__wrapper
+                .info-image__container
+                  img(src=require(`../../assets/images/${item.image.src}`), alt= item.image.alt ? item.image.alt : '').info-image__item
+
+            .info-text.info-item__text
+              .info-text__wrapper
+                .info-text__content
+                  .info-text__title
+                    +sectionTitle(item.title.word1, item.title.word2)
+
+                    if (item.title.subtitle)
+                      .info-text__title-subtitle
+                        +subtitle(item.title.subtitle)
+                  
+                  each description in item.description
+                    .info-description.info-text__description
+                      if (description.title)
+                        .info-description__title
+                          +subtitle(description.title, 'h3')
+                      
+                      p.info-description__text !{description.text}
+
+                    if (description.link)
+                      .info-description__link
+                        +link(description.link)
