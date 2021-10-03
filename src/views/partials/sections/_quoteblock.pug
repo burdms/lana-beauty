@@ -1,5 +1,6 @@
 mixin quoteblock(content)
-  section.quoteblock.section(class= content.firstSection ? 'first-section' : '')
+  - const className = (content.firstSection ? 'first-section' : '') + (content.lastSection ? ' last-section' : '')
+  section.quoteblock.section(class= className)
     .container
       .quoteblock__wrapper
         +quote(content)

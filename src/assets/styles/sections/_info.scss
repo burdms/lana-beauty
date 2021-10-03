@@ -3,19 +3,25 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 75px 0;
-
-    @include desktop {
-      padding: vw(75) 0;
-    }
 
     @include media("s") {
       flex-direction: column;
-      padding: 50px 0;
     }
 
-    @include media("s") {
-      padding: 35px 0;
+    &:not(:first-child) {
+      padding-top: 75px;
+
+      @include desktop {
+        padding-top: vw(75);
+      }
+
+      @include media("m") {
+        padding-top: 50px;
+      }
+
+      @include media("s") {
+        padding-top: 35px;
+      }
     }
 
     &--flipped {

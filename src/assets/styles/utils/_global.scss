@@ -27,22 +27,51 @@ body {
 }
 
 .first-section {
-  margin-top: 175px;
+  padding-top: 150px !important;
 
   @include desktop {
-    margin-top: vw(175);
+    margin-top: vw(150) !important;
+  }
+
+  @include media("m") {
+    padding-top: 75px !important;
+  }
+
+  @include media("s") {
+    padding-top: 50px !important;
+  }
+}
+
+.last-section {
+  padding-bottom: 150px !important;
+
+  @include desktop {
+    padding-bottom: vw(150) !important;
+  }
+
+  @include media("m") {
+    padding-bottom: 75px !important;
+  }
+
+  @include media("s") {
+    padding-bottom: 50px !important;
   }
 }
 
 .section {
-  padding: 150px 0;
+  padding: 75px 0;
 
   @include desktop {
-    padding: vw(150) 0;
+    padding: vw(75) 0;
   }
 
   @include media("m") {
-    padding: 75px 0;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  @include media("s") {
+    padding: 35px 0;
   }
 }
 
