@@ -3,6 +3,7 @@ extends ../layouts/default
 include ../partials/sections/_hero
 include ../partials/sections/_quoteblock
 include ../partials/sections/_info
+include ../partials/sections/_promo
 
 block vars
   -
@@ -28,10 +29,12 @@ block vars
           ],
         },
         quote: {
+          firstSection: true,
           text: `You won't get a&nbsp;second chance to make a&nbsp;first impression`,
           figcaption: '— Coco Chanel',
         },
         info: {
+          lastSection: true,
           items: [
             {
               title: { word1: 'Make', word2: '-Up', subtitle: 'MAKEUP<br>PEELING LIFTING<br>INIEZIONI' },
@@ -56,6 +59,12 @@ block vars
             },
           ],
         },
+        promo: {
+              title: 'Prenota la tua visita online',
+              text: 'risparmi fino al 30%',
+              link: { text: 'Prenota l’appuntamento' },
+              background: { src: 'divider-main.jpg', alt: '' },
+        },
       },
     };
 
@@ -63,10 +72,4 @@ block main
   +heroSection(page.content.hero)
   +quoteblock(page.content.quote)
   +info(page.content.info)
-
-  //- .container
-  //-   +sectionTitle('test ', 'title')
-  //-   +link({text: 'Linktext'})
-  //-   +quote({text: 'A very very long quote text.<br>With tags etc.'})
-  //-   a(href="#").navlink LINK
-  //-   +socials 
+  +promo(page.content.promo)

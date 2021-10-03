@@ -1,0 +1,18 @@
+mixin promo(content)
+  section.promo
+    .banner.promo__wrapper
+      if (content.background)
+        .promo__background
+          .promo__background-overlay
+          img(src=require(`../../assets/images/${content.background.src}`), alt= content.background.alt ? content.background.alt : '').promo__background-image
+      
+      .container.promo__container
+        h2.banner-title.promo__title= content.title
+
+        if (content.text)
+          .promo__text
+            p.banner-text !{content.text}
+
+        if (content.link)
+            .promo__link
+              +link(content.link)
