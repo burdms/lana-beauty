@@ -4,6 +4,7 @@ include ../partials/sections/_hero
 include ../partials/sections/_quoteblock
 include ../partials/sections/_info
 include ../partials/sections/_promo
+include ../partials/sections/_testimonials
 
 block vars
   -
@@ -65,6 +66,14 @@ block vars
               link: { text: 'Prenota l’appuntamento' },
               background: { src: 'divider-main.jpg', alt: '' },
         },
+        testimonials: {
+          firstSection: true,
+          title: { word1: 'I ', word2: 'testimonials', subtitle: 'cosa dicono di noi' },
+          items: [
+            { author: 'Sarah Karras', date: 'Agosto 2021', image: { src: 'manicure.jpg', alt: '' }, text: `Joyce fornisce sempre un servizio eccellente per me. Maria si occupa di lavarmi la testa mentre Joyce si occupa dello styling e di altri compiti. Penso che lavorino bene insieme e forniscano un ottimo servizio! Le raccomando vivamente. Sono persone molto piacevoli, è piacevole trattare e parlare con loro, sono molto accomodanti e capiscono perfettamente i miei bisogni e desideri. L'atmosfera è sempre amichevole e rilassata. Il salone è pulito e gli appuntamenti sono puntuali.` },
+            { author: 'Karras Sarah', date: 'Settembre 2020', image: { src: 'makeup.jpg', alt: '' }, text: `Joyce fornisce sempre un servizio eccellente per me. Maria si occupa di lavarmi la testa mentre Joyce si occupa dello styling e di altri compiti. Penso che lavorino bene insieme e forniscano un ottimo servizio! Le raccomando vivamente. Sono persone molto piacevoli, è piacevole trattare e parlare con loro, sono molto accomodanti e capiscono perfettamente i miei bisogni e desideri.` },
+          ],
+        }
       },
     };
 
@@ -73,3 +82,4 @@ block main
   +quoteblock(page.content.quote)
   +info(page.content.info)
   +promo(page.content.promo)
+  +testimonials(page.content.testimonials)

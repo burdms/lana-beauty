@@ -1,0 +1,35 @@
+mixin testimonials(content)
+  - const className = (content.firstSection ? 'first-section' : '') + (content.lastSection ? ' last-section' : '')
+  section.testimonials.section(class= className)
+    .container
+      .testimonials-wrapper
+        if (content.title)
+          .testimonials__title
+            +sectionTitle(content.title.word1, content.title.word2)
+            
+            if (content.title.subtitle)
+              .testimonials__title-subtitle
+                +subtitle(content.title.subtitle)
+
+        .swiper-container.testimonials-slider
+          .swiper-wrapper
+            each item in content.items
+              .swiper-slide.testimonials-item.testimonials-slider__slide
+                .testimonials-text.testimonials-item__text
+                  .testimonials-text__wrapper
+                    .testimonials-text__content                      
+                      .testimonials-description.testimonials-text__description                          
+                        p.testimonials-description__text !{item.text}
+
+                      .testimonials-info.testimonials-text__info
+                        span.testimonials-info__author= item.author
+                        span.testimonials-info__date= item.date
+
+                .testimonials-image.testimonials-item__image
+                  .testimonials-image__wrapper
+                    .testimonials-image__container
+                      img(src=require(`../../assets/images/${item.image.src}`), alt= item.image.alt ? item.image.alt : '').testimonials-image__item
+
+          +sliderButton('prev', 'testimonials-slider__button')
+          +sliderButton('next', 'testimonials-slider__button')
+          
