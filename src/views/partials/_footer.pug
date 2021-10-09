@@ -1,1 +1,40 @@
-footer.footer
+footer.footer.section
+  .container-wide
+    .footer-wrapper
+      .footer-top
+        .footer-logo.footer-item
+          a(href="/").footer-logo__item
+              img(src=require("../../assets/images/lana-beauty-logo.png"), alt="Lana Beauty — estetica & makeup permanente").footer-logo__item-image
+        
+        ul.footer-list.footer-links.footer-item
+          each item in [ { text: 'Servizi' }, { text: 'Portfolio' }, { text: 'Shop' },  { text: 'Contatti' } ]
+            li.footer-list__item
+              a(href= item.href ? item.href : '#').navlink.footer-list__item-link= item.text
+
+        ul.footer-list.footer-contacts.footer-item
+          each item in [ { href: 'tel:+39011999999', text: '011 999999' }, { href: 'mailto:example@example.com', text: 'example@example.com' }, { href: 'https://goo.gl/maps/ijbF2u6LGKxrJgCk8', blank, text: 'Via Bruno Buozzi, 5, 10121 Torino TO' } ]
+            li.footer-list__item
+              a(href= item.href ? item.href : '#' target= item.blank ? '_blank' : '').navlink.footer-list__item-link= item.text
+
+        .footer-extras.footer-item
+          .footer-extras__socials
+            +socials
+          
+          ul.langs.footer-extras__langs
+            li.langs__item
+              a(href="#" data-lang="ru").link.navlink.langs__item-link
+                | Ru
+
+            li.langs__item
+              a(href="#" data-lang="en").link.navlink.langs__item-link
+                | En
+
+
+      .footer-bottom
+        span.footer-privacy.footer-bottom__item
+          | © Lana Beauty | Centro Estetico. Tutti i diritti sono riservati. 2021
+      
+        ul.footer-docs.footer-bottom__item
+          each item in [ { text: 'Privacy' }, { text: 'Cookies' } ]
+            li.footer-docs__item
+              a(href= item.href ? item.href : '#').navlink.footer-docs__item-link= item.text

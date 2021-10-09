@@ -1,0 +1,140 @@
+.footer {
+  font-size: 14px;
+  line-height: 16px;
+  color: $black;
+  background-color: $greyLight;
+
+  @include desktop {
+    font-size: vw(14);
+    line-height: vw(16);
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 75px;
+
+    @include desktop {
+      padding-bottom: vw(75);
+    }
+
+    @include media("xs") {
+      flex-wrap: wrap;
+      padding-bottom: 0;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media("xs") {
+      flex-direction: column;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &__item {
+      @include media("xs") {
+        margin-top: 15px;
+        text-align: center;
+      }
+    }
+  }
+
+  &-item {
+    @include media("xs") {
+      flex-basis: 50%;
+      flex-shrink: 0;
+      order: 1;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    @include media("xxs") {
+      flex-basis: 100%;
+    }
+  }
+
+  &-logo {
+    @include media("xs") {
+      order: 0;
+    }
+
+    &__item {
+      display: block;
+      width: 100px;
+      height: 89px;
+      overflow: hidden;
+
+      @include desktop {
+        width: vw(100);
+        height: vw(90);
+      }
+
+      @include media("s") {
+        width: 80px;
+        height: 69px;
+      }
+
+      @include media("xs") {
+        margin: 0 auto;
+      }
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-list {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+
+        @include desktop {
+          margin-bottom: vw(20);
+        }
+      }
+    }
+  }
+
+  &-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media("xs") {
+      order: 0;
+    }
+
+    &__socials {
+      margin-bottom: 20px;
+
+      @include desktop {
+        margin-bottom: vw(20);
+      }
+    }
+  }
+
+  &-docs {
+    display: flex;
+    align-items: center;
+
+    &__item {
+      &:not(:last-child) {
+        &::after {
+          content: "|";
+          margin: 0 8px;
+
+          @include desktop {
+            margin: 0 vw(8);
+          }
+        }
+      }
+    }
+  }
+}
