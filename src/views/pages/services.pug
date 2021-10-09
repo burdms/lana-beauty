@@ -1,0 +1,97 @@
+extends ../layouts/default
+
+include ../partials/sections/_hero
+include ../partials/sections/_info
+
+block vars
+  -
+    const page = {
+      title: 'Servizi — Lana Beauty',
+      class: 'services',
+      content: {
+        hero: {
+          slides: [
+            { 
+              light: true,
+              title: 'Servizi',
+              shortTitle: true,
+              nav: [
+                { href: 'makeup', text: 'make-up' },
+                { href: 'manicure', text: 'manicure' },
+              ],
+              socials: false,
+              background: { src: 'hero-servizi.jpg', alt: '' },
+            },
+          ],
+        },
+        info: {
+          lastSection: true,
+          items: [
+            {
+              id: 'makeup',
+              title: { word1: 'Make', word2: '-Up' },
+              image: { src: 'makeup.jpg', alt: '' },
+              description: [
+                {
+                  title: 'Make-up',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                },
+                {
+                  title: 'lifting',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                },
+                {
+                  title: 'INIEZIONI',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                },
+                {
+                  title: 'Peeling',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                  link: { href: '#', text: 'Prenota adesso' },
+                },
+              ],
+            },
+            {
+              id: 'manicure',
+              title: { word1: 'Manicure' },
+              image: { src: 'manicure.jpg', alt: '' },
+              description: [
+                {
+                  title: 'MANI, PEDI',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                },
+                {
+                  title: 'EDIFICIO ACRILICO',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                },
+                {
+                  title: 'ESTENSIONE GEL',
+                  text: `Il trucco giusto può rendere armoniosa tutta la tua immagine, evidenziare i tuoi lati forti e nascondere i piccoli difetti della pelle. I nostri esperti sanno come renderti ancora più bella con l'aiuto della make-up art!`,
+                  link: { href: '#', text: 'Prenota adesso' },
+                },
+              ],
+            },
+          ],
+        },
+        coupons: {
+          lastSection: true,
+          items: [
+            {
+              title: { word1: 'I ', word2: 'coupon', subtitle: 'e buoni regalo' },
+              image: { src: 'coupon.jpg', alt: '' },
+              description: [
+                {
+                  text: `Lascia una richiesta e ti aiuteremo a scegliere esattamente il regalo giusto per chi ami`,
+                  link: { href: '#', text: 'Prenota adesso' },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    };
+
+block main
+  +heroSection(page.content.hero)
+  +info(page.content.info)
+  +info(page.content.coupons)
