@@ -4,7 +4,7 @@ mixin info(content)
     .container
       .info-wrapper
         each item in content.items
-          .info-item(class= item.flipped ? 'info-item--flipped' : '')
+          .info-item(class= item.flipped ? 'info-item--flipped' : '', id= item.id ? item.id : '')
             .info-image.info-item__image
               .info-image__wrapper
                 .info-image__container

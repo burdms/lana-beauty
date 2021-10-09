@@ -11,11 +11,16 @@ mixin heroSection(content)
 
             .container.hero__container
               - const tag = (index === 0) ? 'h1' : 'h2'
-              #{tag}.banner-title.hero__title= item.title
+              #{tag}.banner-title.hero__title(class= item.shortTitle ? 'hero__title--short' : '')= item.title
 
               if (item.text)
                 .hero__text
                   p.banner-text !{item.text}
+
+              if (item.nav)
+                .hero__nav
+                  each link in item.nav
+                    a(href= `#${link.href}`).js-scroll-link.navlink.hero__nav-link= link.text 
 
               if (item.link)
                 .hero__link

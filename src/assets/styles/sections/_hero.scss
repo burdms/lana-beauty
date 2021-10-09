@@ -20,7 +20,8 @@ $elemMargin: 70px;
     &-light {
       .hero__title,
       .hero__text,
-      .hero__link {
+      .hero__link,
+      .hero__nav {
         color: $white;
 
         span {
@@ -97,6 +98,25 @@ $elemMargin: 70px;
     @include media("xs") {
       margin-bottom: 35px;
       min-height: 64px;
+    }
+
+    &--short {
+      min-height: auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &-link {
+      &:not(:last-child) {
+        margin-right: 20px;
+
+        @include desktop {
+          margin-right: vw(20);
+        }
+      }
     }
   }
 
