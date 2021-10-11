@@ -26,6 +26,10 @@
       @include desktop {
         margin-bottom: vw(72);
       }
+
+      @include media("s") {
+        margin: 40px 0;
+      }
     }
 
     &__no-title {
@@ -33,6 +37,10 @@
 
       @include desktop {
         padding-top: vw(72);
+      }
+
+      @include media("s") {
+        padding-top: 40px;
       }
     }
 
@@ -75,10 +83,6 @@
           width: 210px;
           height: 210px;
         }
-
-        // @include media("xs") {
-        //   top: -60px;
-        // }
       }
 
       &::after {
@@ -106,11 +110,6 @@
           width: 79px;
           height: 79px;
         }
-
-        // @include media("xs") {
-        //   top: -79px;
-        //   right: 59px;
-        // }
       }
     }
 
