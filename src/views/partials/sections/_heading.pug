@@ -1,0 +1,13 @@
+mixin heading(content)
+  section.heading      
+      .container.columns
+        .columns-wrapper
+          .columns__half
+          .columns__half
+            - const tag = content.tag ? content.tag : 'h1'
+            #{tag}.banner-title.heading__title= content.title
+
+            if (content.description)
+              .heading__description
+                p.banner-text !{content.description}
+        

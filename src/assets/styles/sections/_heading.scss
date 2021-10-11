@@ -1,0 +1,11 @@
+.heading {
+  padding: 194px 0 0;
+
+  @include desktop {
+    padding-top: vw(194);
+  }
+
+  @include media("m") {
+    padding-top: 100px;
+  }
+}
