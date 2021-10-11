@@ -1,0 +1,44 @@
+mixin contactsblock(content)
+  - const className = (content.firstSection ? 'first-section' : '') + (content.lastSection ? ' last-section' : '')
+  section.contactsblock.section(class= className)
+    .container.columns
+        .columns-wrapper
+          .columns__left
+            .contactsblock-media.contactsblock__media
+              if (content.media.map)
+                iframe(src=content.media.map.url width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy").contactsblock-media__item.contactsblock-media__map
+
+              if (content.media.image)
+                img(src= content.media.image.src, alt= content.media.image.alt ? content.media.image.alt : '').contactsblock-media__item.contactsblock-media__image
+          
+          .columns__right
+            .contactsblock-info
+              if (content.info.title)
+                .contactsblock-info__title
+                  +sectionTitle(content.info.title.word1, content.info.title.word2)
+
+                  if (content.info.title.subtitle)
+                    .contactsblock-info__title-subtitle
+                      +subtitle(content.info.title.subtitle)
+              
+              .contactsblock-info__text(class= content.info.title ? '' : 'contactsblock-info__no-title')
+                if (content.info.timetable)
+                  .contactsblock-info__text-item.contactsblock-info__timetable
+                    p !{content.info.timetable}
+
+                if (content.info.address)
+                  .contactsblock-info__text-item.contactsblock-info__address
+                    p !{content.info.address}
+                
+                if (content.info.phone)
+                  .contactsblock-info__text-item.contactsblock-info__phone
+                    +link(content.info.phone)
+                
+                if (content.info.email)
+                  .contactsblock-info__text-item.contactsblock-info__email
+                    +link(content.info.email)
+
+                if (content.info.socials)
+                  .contactsblock-info__text-item.contactsblock-info__socials
+                    +socials
+                    

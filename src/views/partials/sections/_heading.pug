@@ -2,8 +2,8 @@ mixin heading(content)
   section.heading      
       .container.columns
         .columns-wrapper
-          .columns__half
-          .columns__half
+          .columns__left
+          .columns__right
             - const tag = content.tag ? content.tag : 'h1'
             #{tag}.banner-title.heading__title= content.title
 
