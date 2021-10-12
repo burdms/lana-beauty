@@ -7,7 +7,7 @@ footer.footer.section
               img(src=require("../../assets/images/lana-beauty-logo.png"), alt="Lana Beauty — estetica & makeup permanente").footer-logo__item-image
         
         ul.footer-list.footer-links.footer-item
-          each item in [ { text: 'Servizi' }, { text: 'Portfolio' }, { text: 'Shop' },  { text: 'Contatti' } ]
+          each item in [ { href: '/services.html', text: 'Servizi' }, { text: 'Portfolio' }, { text: 'Shop' },  { href: '/contacts.html', text: 'Contatti' } ]
             li.footer-list__item
               a(href= item.href ? item.href : '#').navlink.footer-list__item-link= item.text
 
