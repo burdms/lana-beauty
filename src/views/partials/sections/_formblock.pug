@@ -1,0 +1,20 @@
+mixin formblock(content)
+  - const className = (content.firstSection ? 'first-section' : '') + (content.lastSection ? ' last-section' : '')
+  section.formblock.section(class= className)
+    .container.columns
+        .columns-wrapper
+          .columns__left
+            .formblock-media.formblock__media
+              if (content.media.image)
+                img(src= content.media.image.src, alt= content.media.image.alt ? content.media.image.alt : '').formblock-media__item.formblock-media__image
+          
+          .columns__right
+            .formblock-form
+              if (content.info.title)
+                .formblock-form__title
+                  +sectionTitle(content.info.title.word1, content.info.title.word2)
+
+                  if (content.info.title.subtitle)
+                    .formblock-form__title-subtitle
+                      +subtitle(content.info.title.subtitle)
+                    
