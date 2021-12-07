@@ -33,7 +33,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}/scripts/${generateFilename('js')}`,
     path: PATHS.build,
-    publicPath: './',
+    publicPath: isDev ? '/' : './',
     clean: true,
     environment: {
       arrowFunction: false,
@@ -104,8 +104,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              // publicPath: '/',
-              publicPath: '../../',
+              publicPath: isDev ? '/' : '../../',
             },
           },
           'css-loader',
