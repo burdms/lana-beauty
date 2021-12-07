@@ -20,8 +20,8 @@ const PAGES_DIR = `${PATHS.src}/views/pages`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 
-const generateFilename = (ext) =>
-  isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
+const generateFilename = ext =>
+  (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`);
 
 module.exports = {
   externals: {
@@ -104,7 +104,8 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: './',
+              // publicPath: '/',
+              publicPath: '../../',
             },
           },
           'css-loader',
