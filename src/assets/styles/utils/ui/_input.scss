@@ -1,0 +1,27 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__item {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: $greyLight;
+
+    @include desktop {
+      padding: vw(15);
+      border-radius: vw(10);
+    }
+  }
+
+  &__textarea {
+    height: 95px;
+    resize: none;
+
+    @include desktop {
+      height: vw(95);
+    }
+  }
+}

@@ -15,7 +15,7 @@ mixin heroSection(content)
 
               if (item.text)
                 .hero__text
-                  p.banner-text !{item.text}
+                  p.banner-text!= item.text
 
               if (item.nav)
                 .hero__nav

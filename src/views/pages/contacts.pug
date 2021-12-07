@@ -2,6 +2,7 @@ extends ../layouts/default
 
 include ../partials/sections/_heading
 include ../partials/sections/_contactsblock
+include ../partials/sections/_formblock
 
 block vars
   -
@@ -24,10 +25,45 @@ block vars
             socials: true,
           },
         },
+        formblock: {
+          lastSection: true,
+          media: {
+            image: {},
+          },
+          form: {
+            title: 'Ci sono ancora le domande?',
+            inputs: [
+              {
+                type: 'text',
+                name: 'name',
+                placeholder: 'Nome',
+              },
+              {
+                type: 'tel',
+                name: 'tel',
+                placeholder: 'Cellulare',
+              },
+              {
+                type: 'textarea',
+                name: 'question',
+                placeholder: 'Domanda',
+              },
+            ],
+            privacy: {
+                type: 'checkbox',
+                name: 'privacy',
+                label: `Ho preso visione e acconsento al trattamento dei dati personali ai sensi 
+                        dell’art. 13 del Regolamento UE 2016/679 (c.d. GDPR) e del D. Lgs. 30.06.2003, 
+                        n. 196, così come modificato ed integrato dal D. Lgs. 10.08.2018, n. 101 
+                        (c.d. Codice Privacy)`,
+              },
+          },
+        },
       },
     };
 
 block main
   +heading(page.content.heading)
   +contactsblock(page.content.contacts)
+  +formblock(page.content.formblock)
 

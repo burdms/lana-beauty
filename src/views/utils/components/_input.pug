@@ -1,0 +1,29 @@
+mixin input(input)
+  if (input.type === 'checkbox')
+    .input
+
+  else if (input.type === 'textarea')
+    .input
+      if (input.label)
+        label.input__label(for= input.id ? input.id : '')= input.label
+
+      textarea.input__item.input__textarea(name= input.name, id= input.id ? input.id : ''
+                                          class= input.class ? input.class : ''
+                                          placeholder= input.placeholder ? input.placeholder : '')
+                                          
+      if (input.error)
+        span.input__error= input.error
+
+  else
+    .input
+      if (input.label)
+        label.input__label(for= input.id ? input.id : '')= input.label
+
+      input.input__item(type= input.type ? input.type : 'text'
+                  name= input.name, id= input.id ? input.id : ''
+                  class= input.class ? input.class : ''
+                  placeholder= input.placeholder ? input.placeholder : '')
+
+      if (input.error)
+        span.input__error= input.error
+  

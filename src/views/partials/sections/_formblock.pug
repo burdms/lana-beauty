@@ -9,12 +9,15 @@ mixin formblock(content)
                 img(src= content.media.image.src, alt= content.media.image.alt ? content.media.image.alt : '').formblock-media__item.formblock-media__image
           
           .columns__right
-            .formblock-form
-              if (content.info.title)
-                .formblock-form__title
-                  +sectionTitle(content.info.title.word1, content.info.title.word2)
+            .formblock-heading
+              if (content.title)
+                .formblock-heading__title
+                  +sectionTitle(content.title.word1, content.title.word2)
 
-                  if (content.info.title.subtitle)
-                    .formblock-form__title-subtitle
-                      +subtitle(content.info.title.subtitle)
+                  if (content.title.subtitle)
+                    .formblock-heading__title-subtitle
+                      +subtitle(content.title.subtitle)
+              
+              .formblock-form
+                +form(content.form)
                     

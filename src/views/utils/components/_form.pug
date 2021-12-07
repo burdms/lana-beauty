@@ -1,0 +1,18 @@
+mixin form(form)
+  form.form(action= form.action ? form.action : 'https://echo.htmlacademy.ru'
+            method= form.method ? form.method : 'POST'
+            class= form.class ? form.class : '')
+    if (form.title)
+      span.form__title= form.title
+
+    .form__inputs
+      each input in form.inputs
+        .form__inputs-group
+          +input(input)
+    
+    if (form.privacy)
+      .form__privacy
+        +input(form.privacy)
+
+    .form__submit
+      //- +button(form.submit)

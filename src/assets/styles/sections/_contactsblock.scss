@@ -4,13 +4,13 @@
     z-index: 1;
     width: 450px;
     height: 450px;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
 
     @include desktop {
       width: vw(450);
       height: vw(450);
-      border-radius: vw(8);
+      border-radius: vw(10);
     }
 
     &__item {
